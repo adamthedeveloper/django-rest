@@ -1,0 +1,80 @@
+This script is intended to add RESTful actions and templates to your django application.  I admit, this is sort of RAILS-ish - but I like it.  The following actions will written to your application's views.py file:
+
+index, new, create, edit, update, destroy, show
+
+Also, matching templates will be created in your templates directory:
+
+templates/<application name>/index.html
+templates/<application name>/new.html
+templates/<application name>/create.html
+templates/<application name>/edit.html
+templates/<application name>/update.html
+templates/<application name>/destroy.html
+templates/<application name>/show.html
+
+This gives you an initial shell to work with.
+
+INSTALLATION (Quick):
+
+I use a MAC and to get this to run for me, I had to copy restview.py to:
+
+/Library/Python/2.5/site-packages/django/core/management/commands/
+
+Once you copy it to the similar place on your machine/environment, you should be able to go to your django project folder, create your application:
+
+python manage.py startapp <application name>
+
+and then to create the RESTful shell do:
+
+python manage.py restview <application name>
+
+HOW TO USE WITH SOME Handholding:
+
+Step 1) Create a project
+
+django-admin.py startproject loddydaa
+
+Step 2) Create an application
+
+cd loddyda
+python manage.py startapp woopdydoo
+
+Step 3) Run django-rest
+
+python manage.py restview woopdydoo
+
+If all goes well, you will see your views.py has been modified and you have view templates created for each of the actions as well.
+
+Make sure you have added the templates directory to your TEMPLATE_DIRS directive in settings.py.
+
+Also, add your application's urls.py file and make it look something like this:
+
+from django.conf.urls.defaults import *
+
+urlpatterns = patterns('<project name>.<application name>.views',
+	(r'^$', 'index'),
+	(r'^show$', 'show'),
+	(r'^new$', 'new'),
+	(r'^create$', 'create'),
+	(r'^edit$', 'edit'),
+	(r'^update$', 'update'),
+	(r'^thanks$', 'thanks'),
+	(r'^login$', 'login'),
+	(r'^logout$', 'logout'),
+	(r'^error$', 'error'),
+)
+
+Probably in the next revision, I will change the code to write the urls.py for us.
+
+And then add this to your project's url.py within the urlpatterns directive:
+
+(r'^<application name here>/', include('<project name here>.<application name here>.urls')),
+
+
+
+
+Thats it!
+
+Please feel free to use the Wiki if you have any problems. Also, feel free to contribute your environment notes on where you had to install it to work for you - just to help out the community.
+
+adamthedeveloper
