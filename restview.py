@@ -43,8 +43,10 @@ class Command(LabelCommand):
 		actions = ['index','new','create','edit','update','destroy','show']
 		for action in actions:
 			arg_vars = "request"
+			"""
 			if action=='show' or action=='edit':
 				arg_vars += ", id"
+			"""
 			f.write('def ' + action + '(' + arg_vars + '):\n')
 			f.write('\tvars = \'\'\n')
 			f.write('\treturn render_to_response("' + app_name + '/' + action + '.html", {\'vars\': vars})\n\n')
