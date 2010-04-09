@@ -1,4 +1,4 @@
-This script is intended to add RESTful actions and templates to your django application.  I admit, this is sort of RAILS-ish - but I like it.  The following actions will written to your application's views.py file:
+This script is intended to add RESTful actions and templates to your django application.  I admit, this is sort of RAILS-ish - but I like it.  The following actions will be written to your application's views.py file:
 
 index, new, create, edit, update, destroy, show
 
