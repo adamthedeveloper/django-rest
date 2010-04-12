@@ -43,28 +43,9 @@ Step 3) Run django-rest
 
 python manage.py restview woopdydoo
 
-If all goes well, you will see your views.py has been modified and you have view templates created for each of the actions as well.
+If all goes well, you will see your views.py has been modified, a urls.py file was created and you have view templates created for each of the actions as well.
 
 Make sure you have added the templates directory to your TEMPLATE_DIRS directive in settings.py.
-
-Also, add your application's urls.py file and make it look something like this:
-
-from django.conf.urls.defaults import *
-
-urlpatterns = patterns('<project name>.<application name>.views',
-	(r'^$', 'index'),
-	(r'^show$', 'show'),
-	(r'^new$', 'new'),
-	(r'^create$', 'create'),
-	(r'^edit$', 'edit'),
-	(r'^update$', 'update'),
-	(r'^thanks$', 'thanks'),
-	(r'^login$', 'login'),
-	(r'^logout$', 'logout'),
-	(r'^error$', 'error'),
-)
-
-Probably in the next revision, I will change the code to write the urls.py for us.
 
 And then add this to your project's url.py within the urlpatterns directive:
 
