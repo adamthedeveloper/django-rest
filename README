@@ -16,7 +16,7 @@ This gives you an initial shell to work with.
 
 INSTALLATION (Quick):
 
-I use a MAC and to get this to run for me, I had to copy restview.py to:
+I use a MAC and to get this to run for me, I had to copy restify.py to:
 
 /Library/Python/2.5/site-packages/django/core/management/commands/
 
@@ -26,7 +26,7 @@ python manage.py startapp <application name>
 
 and then to create the RESTful shell do:
 
-python manage.py restview <application name>
+python manage.py restify <application name>
 
 HOW TO USE WITH SOME Handholding:
 
@@ -41,7 +41,7 @@ python manage.py startapp woopdydoo
 
 Step 3) Run django-rest
 
-python manage.py restview woopdydoo
+python manage.py restify woopdydoo
 
 If all goes well, you will see your views.py has been modified, a urls.py file was created and you have view templates created for each of the actions as well.
 
